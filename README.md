@@ -8,7 +8,7 @@ Install with:
 ## Usage Example
 
 ```js
-var seckill = require("seckill").Seckill,
+const seckill = require("seckill").Seckill;
 
 let sec = new seckill('6379', '127.0.0.1');
 

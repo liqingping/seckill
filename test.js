@@ -3,7 +3,7 @@
  */
 const seckill = require('./index').Seckill;
 
-let sec = new seckill();
+let sec = new seckill('127.0.0.1', '6379');
 
 sec.addForTime(1,  2, new Date('2017-12-09'), new Date('2017-12-12'), function (err, result) {
 	console.log(result);
