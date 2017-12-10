@@ -4,11 +4,15 @@
   "description": "seckill   redpack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "keywords": [
     "seckill"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liqingping/seckill.git"
+  },
   "author": "logoli",
   "license": "ISC",
   "devDependencies": {
