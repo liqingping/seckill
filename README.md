@@ -12,6 +12,7 @@ var seckill = require("seckill").Seckill,
 
 let sec = new seckill('6379', '127.0.0.1');
 
+// addForTime(seckillName, seckillNumber, seckillStartTime, seckillEndTime);
 sec.addForTime(1,  2, new Date('2017-12-09'), new Date('2017-12-12'), function (err, result) {
 	console.log(result);
 });
