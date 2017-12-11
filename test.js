@@ -1,17 +1,34 @@
 /**
  * Created by liqp on 2017/12/10.
  */
-const seckill = require('./index').Seckill;
+const seckill = require('../seckill');
 
-let sec = new seckill('127.0.0.1', '6379');
+seckill.init();
 
-sec.addForTime(1,  2, new Date('2017-12-09'), new Date('2017-12-12'), function (err, result) {
-	console.log(result);
+
+let option = {
+	startTime:  new Date('2017-12-09'),
+	endTime: new Date('2017-12-20'),
+	limit: 20,
+};
+
+seckill.addForTime(1,  200, option, function (err, result) {
+
+	for (let a = 0; a<300; a++){
+		seckill.getForTime(1,a,function (err, result) {
+			console.log(result);
+		})
+	}
 });
 
 
-for (let a = 0; a<30; a++){
-	sec.getForTime(1,function (err, result) {
-		console.log(result);
-	})
-}
+seckill.add(1,  20, function (err, result) {
+	for (let a = 0; a<30; a++){
+		seckill.get(1,a,function (err, result) {
+			console.log(result);
+		})
+	}
+});
+
+
+
