@@ -1,6 +1,6 @@
 {
   "name": "seckill",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "seckill   redpack",
   "main": "index.js",
   "scripts": {
