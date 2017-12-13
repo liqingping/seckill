@@ -8,21 +8,39 @@ Install with:
 ## Usage Example
 
 ```js
-const seckill = require("seckill").Seckill;
+const seckill = require('seckill');
 
-let sec = new seckill('6379', '127.0.0.1');
+seckill.init(host, port, db, password);
 
-// addForTime(seckillName, seckillNumber, seckillStartTime, seckillEndTime);
-sec.addForTime(1,  2, new Date('2017-12-09'), new Date('2017-12-12'), function (err, result) {
+// addForTime(seckillName, seckillNumber, option);
+// option is object
+
+let option = {
+	startTime:  new Date('2017-12-09'),         //activity start dataTime
+	endTime: new Date('2017-12-20'),            //activity end dataTime
+	limit: 1,                                   //person receive limit
+};
+
+sec.addForTime(1,  2, option, function (err, result) {
 	console.log(result);
 });
 
-
-for (let a = 0; a<30; a++){
-	sec.getForTime(1,function (err, result) {
+// addForTime(seckillName, receiveUserId);
+for (let i = 0; i<30; i++){
+	sec.getForTime(1,i,function (err, result) {
 		console.log(result);
 	})
 }
+
+// updateForTime(seckillName, isAdd, number)     //idAdd eq true  is +    eq false  is  -
+seckill.updateForTime(1, false, 1, function (err, result) {
+	console.log(result);
+});
+
+// delForTime(seckillName)
+seckill.delForTime(1, function (err, result) {
+	console.log(result);
+});
 ```
 
 ## License

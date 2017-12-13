@@ -1,7 +1,7 @@
 {
   "name": "seckill",
-  "version": "1.0.4",
-  "description": "seckill   redpack",
+  "version": "1.1.0",
+  "description": "redpack and Seconds kill activity lock, concurrency control, etc",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
