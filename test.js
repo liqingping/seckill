@@ -6,8 +6,8 @@ const seckill = require('../seckill');
 seckill.init();
 
 let option = {
-	startTime:  new Date('2017-12-19'),
-	endTime: new Date('2017-12-29'),
+	startTime:  new Date('2018-5-19'),
+	endTime: new Date('2018-6-29'),
 	limit: 1,
 };
 
