@@ -6,23 +6,23 @@ const seckill = require('../seckill');
 seckill.init();
 
 let option = {
-	startTime:  new Date('2018-5-19'),
+	startTime:  new Date('2018-5-13'),
 	endTime: new Date('2018-6-29'),
 	limit: 1,
 };
-
-seckill.addForTime(1,  20, option, function (err, result) {
+/*
+ * @desc num 为 -1则无总量限制
+ * */
+seckill.addForTime(1, 20, option, function (err, result) {
 	console.log(err);
 	console.log(result);
 });
 
-for (let a = 0; a<20; a++){
+for (let a = 0; a<25; a++){
 	seckill.getForTime(1,a,function (err, result) {
 		console.log(result);
 	});
-
 }
-
 
 seckill.updateForTime(1, false, 1, function (err, result) {
 	console.log('修改操作'+err,result);
